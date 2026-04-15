@@ -364,7 +364,7 @@ export function Traction() {
 }
 
 /* ============================================
-   ABOUT (condensed story)
+   OUR MISSION
    ============================================ */
 export function About() {
   const { accent } = useMode()
@@ -372,68 +372,23 @@ export function About() {
   return (
     <section className="py-24 bg-surface" id="about">
       <div className="max-w-[1240px] mx-auto px-8">
-        <SectionTag>About Faceless</SectionTag>
-        <SectionTitle>Built on one belief —<br /><Em>make the community win, and we all win.</Em></SectionTitle>
+        <SectionTag>Our Mission</SectionTag>
+        <SectionTitle>A strong community can<br /><Em>achieve anything.</Em></SectionTitle>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-8">
           <div>
             <div className={`font-display text-[1.4rem] italic ${accent} my-6 pl-6 border-l-[3px] ${accent === 'text-lime' ? 'border-lime' : 'border-teal'} leading-[1.35]`}>
               &ldquo;If I make my community win, I will definitely win too.&rdquo;
             </div>
-            <p className="text-[0.95rem] leading-[1.8] text-subtle mb-4">We started by going into colleges — face-to-face, one classroom at a time. Building permanent blockchain clubs where students learn, earn, and grow together as a community. Our first club in Coimbatore proved it works.</p>
-            <p className="text-[0.95rem] leading-[1.8] text-subtle">We attended conferences for two years — Token 2049 in Dubai and Singapore, India Blockchain Week in Bangalore — with zero clients. Then one video of students doing actual tasks landed our first brand partner. Not a pitch deck. A video.</p>
-          </div>
-          <div>
-            <p className="text-[0.95rem] leading-[1.8] text-subtle mb-4">
-              <strong className="text-cream">The irony is the point.</strong> We&apos;re called Faceless — but we&apos;re the most face-to-face community in the space. Verified students, physical classrooms, genuine interactions. While the rest of the industry operates from behind screens, we chose to show up in person. Every day. That&apos;s our edge.
-            </p>
+            <p className="text-[0.95rem] leading-[1.8] text-subtle mb-4">That&apos;s the core of Faceless. We&apos;re a community that grows together — students learning together, earning together, supporting each other&apos;s content, and building something bigger than any individual. Every campaign makes our creators better. Every new member makes the community stronger.</p>
+            <p className="text-[0.95rem] leading-[1.8] text-subtle mb-4">We started by going into colleges and meeting students face-to-face. We established India&apos;s first permanent blockchain club in Coimbatore. We attended conferences for two years with zero clients — until one video of students doing actual tasks landed our first brand partner. Not a pitch deck. A video.</p>
             <p className="text-[0.95rem] leading-[1.8] text-subtle mb-4">Today we&apos;re expanding from Web3 into Web2. The same model that onboards students to crypto exchanges works for a local cafe. The same network that creates blockchain content can create UGC for any brand. And everything — every task, every reel, every payment — gets a permanent stamp on Solana.</p>
-            <p className={`${accent} font-display text-[1.05rem] italic`}>We&apos;re building the next generation of creators from campuses across India — and everything we do is verified, transparent, and on-chain.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ============================================
-   FOR STUDENTS
-   ============================================ */
-export function Students() {
-  return (
-    <section className="py-16 bg-gradient-to-br from-lime/5 to-orange/[0.02] border-y border-border">
-      <div className="max-w-[1240px] mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <SectionTag>For Students</SectionTag>
-            <SectionTitle className="!text-[clamp(1.5rem,3vw,2rem)]">
-              Earn while you learn.<br /><Em>Grow into a creator.</Em>
-            </SectionTitle>
-            <p className="text-subtle leading-[1.75] text-[0.88rem] mt-3">Students in our network don&apos;t just complete tasks — they grow. They learn content creation, build audiences, and develop marketing skills that matter. Every campaign makes them better. Their growing online presence becomes a portfolio of verified work.</p>
-            <p className="text-subtle leading-[1.75] text-[0.88rem] mt-2">Our community is curious, supportive, and collaborative. Students help each other learn, support each other&apos;s content, and grow together. They&apos;re the creators and micro-influencers of tomorrow.</p>
+            <p className={`${accent} font-display text-[1.05rem] italic`}>We&apos;re not building just another marketing platform. We&apos;re building the next generation of creators from campuses across India — and everything we do is verified, transparent, and on-chain.</p>
           </div>
           <div>
-            <ImageSlot
-              // src="/images/students-collaborating.jpg"   ← ADD YOUR IMAGE
-              alt="Students collaborating"
-              placeholder="Students collaborating\nCommunity session"
-              label="Students learning and growing together"
-              sublabel="Community"
-              className="aspect-[16/10] mb-3"
-            />
-            <div className="grid grid-cols-2 gap-3">
-              <ImageSlot
-                // src="/images/student-content.jpg"   ← ADD YOUR IMAGE
-                alt="Student creating content"
-                placeholder="Student creating content"
-                className="aspect-square"
-              />
-              <ImageSlot
-                // src="/images/workshop.jpg"   ← ADD YOUR IMAGE
-                alt="Workshop moment"
-                placeholder="Workshop moment"
-                className="aspect-square"
-              />
+            <div className="p-8 border border-border rounded-2xl bg-bg">
+              <h3 className="font-display text-[1.2rem] mb-4 font-normal">Why &ldquo;Faceless&rdquo;?</h3>
+              <p className="text-[0.95rem] leading-[1.8] text-subtle">The irony is the point. We&apos;re called Faceless — but we&apos;re the most face-to-face community in the space. Verified students, physical classrooms, genuine interactions. While the rest of the industry operates from behind screens, we chose to show up in person. Every day. That&apos;s our edge.</p>
             </div>
           </div>
         </div>
@@ -463,7 +418,7 @@ export function CTA() {
           </>
         ) : (
           <>
-            <SectionTitle className="!max-w-[600px] !mx-auto">Your next best marketing campaign doesn&apos;t need a celebrity.<br /><Em>It needs actual people. We have them.</Em></SectionTitle>
+            <SectionTitle className="!max-w-[600px] !mx-auto">Your next best marketing campaign doesn&apos;t need a celebrity.<br /><Em>It needs actual people.</Em></SectionTitle>
             <p className="text-[0.93rem] text-subtle max-w-[480px] mx-auto mb-8 leading-[1.7]">One campaign. Multiple creators. Authentic content. Genuine reach. Every result verified with permanent proof. Currently operating in Coimbatore, expanding soon.</p>
           </>
         )}

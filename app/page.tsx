@@ -3,7 +3,7 @@
 import { ModeProvider } from '@/components/ModeContext'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import { Marquee, Difference, HowItWorks, Services, Blockchain, Traction, About, Students, CTA, Footer } from '@/components/Sections'
+import { Marquee, Difference, HowItWorks, Services, Blockchain, Traction, About, CTA, Footer } from '@/components/Sections'
 
 export default function Home() {
   return (
@@ -17,7 +17,6 @@ export default function Home() {
       <Blockchain />
       <Traction />
       <About />
-      <Students />
       <CTA />
       <Footer />
     </ModeProvider>

@@ -48,7 +48,7 @@ export default function Hero() {
                   India&apos;s first campus creator and distribution network — powered by establishing blockchain clubs in colleges. We educate students, onboard them to your product, and turn them into content creators who market Web3 to everyday audiences. From testing games to trading on exchanges — we do it all.
                 </p>
                 <div className="font-mono text-[0.66rem] text-lime uppercase tracking-[0.1em] mb-7 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-                  Normies marketing blockchain to normies.
+                  Educate · Onboard · Activate
                 </div>
               </>
             )}
