@@ -28,6 +28,11 @@ body::after {
 }
 
 /* Marquee animation */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 .marquee-track {
   display: flex;
   gap: 2.5rem;
