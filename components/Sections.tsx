@@ -23,6 +23,47 @@ export function Marquee() {
 }
 
 /* ============================================
+   CATEGORY FRAME (Web2 only)
+   ============================================ */
+export function CategoryFrame() {
+  const { isWeb2 } = useMode()
+  const ref = useScrollReveal()
+  if (!isWeb2) return null
+
+  return (
+    <section className="py-24" id="category">
+      <div className="max-w-[1240px] mx-auto px-8">
+        <SectionTag>Our approach</SectionTag>
+        <SectionTitle>
+          We&apos;re not a UGC marketplace.<br />
+          <Em>We&apos;re a community that also makes UGC.</Em>
+        </SectionTitle>
+        <p className="text-subtle leading-[1.75] max-w-[620px] text-[0.93rem] mb-10">
+          UGC marketplaces solved sourcing — they connect brands with thousands of creators online, and they do it well. We do a different job. We build creator communities on college campuses across India, and the content comes out of that naturally.
+        </p>
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="reveal p-7 border border-border rounded-[14px] bg-bg hover:border-teal/40 hover:-translate-y-[5px] transition-all duration-300">
+            <div className="font-mono text-[0.55rem] text-muted uppercase tracking-[0.07em] mb-3">The category today</div>
+            <h3 className="font-display text-[1.12rem] mb-2 font-normal">UGC Marketplaces</h3>
+            <p className="text-[0.82rem] text-subtle leading-[1.65] mb-3">Source a creator. Get a file. Scale content volume across a global pool.</p>
+            <p className="text-[0.82rem] text-subtle leading-[1.65]"><span className="text-cream">Great for:</span> high-volume testimonial videos from strangers, product shots at scale, fast remote UGC.</p>
+          </div>
+          <div className="reveal p-7 border border-teal/15 rounded-[14px] bg-bg hover:border-teal/40 hover:-translate-y-[5px] transition-all duration-300">
+            <div className="font-mono text-[0.55rem] text-teal uppercase tracking-[0.07em] mb-3">What we add</div>
+            <h3 className="font-display text-[1.12rem] mb-2 font-normal">Faceless</h3>
+            <p className="text-[0.82rem] text-subtle leading-[1.65] mb-3">Build a community. Put your product in their hands — together, in person. Get content, live activations, and community amplification as one campaign.</p>
+            <p className="text-[0.82rem] text-subtle leading-[1.65]"><span className="text-cream">Great for:</span> product launches, local market entry, live experiences, and campaigns where the story matters as much as the clip.</p>
+          </div>
+        </div>
+        <p className="text-subtle text-[0.88rem] leading-[1.7] mt-8 max-w-[720px]">
+          Both matter. If what you need is fifty testimonial videos, use a marketplace. If what you need is a launch — real people, real rooms, real reach — that&apos;s us.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+/* ============================================
    WHAT MAKES US DIFFERENT
    ============================================ */
 export function Difference() {
@@ -39,12 +80,12 @@ export function Difference() {
   ]
 
   const web2Cards = [
-    { icon: '👥', title: 'Authentic Voices, Not Scripts', desc: 'Your product gets experienced by actual college students who test it, use it, and share their honest opinion. Genuine UGC from the people who actually tried it.' },
-    { icon: '🎬', title: 'Volume No Agency Can Match', desc: '20 different people. 20 different takes on your product. 20 different audiences reached. That\'s one campaign. Multiple perspectives, massive coverage.' },
-    { icon: '🤝', title: 'Community-Powered Visibility', desc: "Every piece of content gets organic support from our student community. Genuine engagement from verified users that drives visibility naturally — not bought likes or bot comments." },
-    { icon: '💰', title: 'Fraction of Influencer Pricing', desc: 'Get multiple creators, multiple reels, and genuine community engagement — all for what one influencer post costs. You set the budget, we deliver verified results.' },
-    { icon: '📍', title: 'Hyper-Local Reach', desc: "Our students ARE your local audience. Their friends, their classmates, their followers — all in your city. Word of mouth in exactly the geography you need." },
-    { icon: '📈', title: 'Growing Creator Network', desc: "We're building student creator hubs across colleges. A growing network of young creators getting better with every campaign — your next micro-influencers are being built here." },
+    { icon: '', title: 'A community, not a roster', desc: 'Every creator in our network is someone we know. Students in the same campus clubs, showing up every week, supporting each other. Your campaign lands in a room — not in an inbox.' },
+    { icon: '', title: 'Content comes from real experience', desc: "Our creators use your product together before any camera turns on. They taste the coffee, play the game, try the app — and then they shoot. The content feels different because the experience was real." },
+    { icon: '', title: 'Volume no single influencer can match', desc: "Twenty creators, twenty takes, twenty audiences. One campaign. That's the same spend as one mid-tier influencer, with a hundred times the surface area." },
+    { icon: '', title: 'Live activations, not just content', desc: "We can bring your product into a room — a college event, a local launch, a product demo — shoot it, and amplify it online, all from one campaign. That's not content delivery. That's field marketing with a camera." },
+    { icon: '', title: 'Hyper-local reach', desc: "Our students ARE your local audience. Their friends, their classmates, their followers — all in your city. A Coimbatore cafe gets reels from Coimbatore students. Their followers are your next customers." },
+    { icon: '', title: 'Every result verified on-chain', desc: 'Campaign data, creator activity, engagement — all recorded on Solana. Not a dashboard screenshot. Permanent, auditable proof that the work happened.' },
   ]
 
   const cards = isWeb3 ? web3Cards : web2Cards
@@ -56,7 +97,10 @@ export function Difference() {
         {isWeb3 ? (
           <SectionTitle>Billions spent on crypto marketing. The masses still don&apos;t get it.<br /><Em>We fix that — one college at a time.</Em></SectionTitle>
         ) : (
-          <SectionTitle>One influencer gives you one post.<br /><Em>We give you a hundred genuine voices.</Em></SectionTitle>
+          <>
+            <SectionTitle>One influencer gives you one post.<br /><Em>We give you a hundred genuine voices.</Em></SectionTitle>
+            <p className="text-subtle leading-[1.75] max-w-[620px] text-[0.93rem] mt-4">Content is the output. Community is how we make it. Most UGC happens remotely — a product gets shipped, a creator films alone, the file gets uploaded. It works. But it&apos;s missing the part that makes content feel real: the moment people actually experience your product together. That&apos;s the part we build around.</p>
+          </>
         )}
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
           {cards.map((c, i) => (
@@ -170,6 +214,60 @@ export function HowItWorks() {
 }
 
 /* ============================================
+   PRACTICE COMPARISON (Web2 only)
+   ============================================ */
+export function PracticeComparison() {
+  const { isWeb2 } = useMode()
+  const ref = useScrollReveal()
+  if (!isWeb2) return null
+
+  const rows = [
+    { label: 'The creators', marketplace: 'Strangers on a roster', faceless: 'A community we meet weekly' },
+    { label: 'How content gets made', marketplace: 'Solo, at home', faceless: 'Together, in rooms' },
+    { label: 'Product experience', marketplace: 'Shipped remote', faceless: 'Shared in person' },
+    { label: 'Live activations', marketplace: '—', faceless: 'Events, launches, field campaigns' },
+    { label: 'Amplification', marketplace: 'Individual posts', faceless: 'Coordinated community support' },
+    { label: 'Results verification', marketplace: 'Platform dashboard', faceless: 'On-chain, permanent' },
+    { label: 'Best for', marketplace: 'High-volume remote UGC', faceless: 'Launches, market entry, live campaigns' },
+  ]
+
+  return (
+    <section className="py-24 bg-surface" id="compare">
+      <div className="max-w-[1240px] mx-auto px-8">
+        <SectionTag>Side by side</SectionTag>
+        <SectionTitle>What that looks like in practice</SectionTitle>
+        <p className="text-subtle leading-[1.75] max-w-[620px] text-[0.93rem] mb-10">
+          Nothing against the platforms brands already use — we work alongside them. Here&apos;s how our model compares on the things that matter for campaigns.
+        </p>
+        <div ref={ref} className="reveal overflow-x-auto">
+          <table className="w-full border-collapse text-[0.85rem]">
+            <thead>
+              <tr>
+                <th className="text-left p-4 border border-border text-subtle font-mono text-[0.6rem] uppercase tracking-[0.1em] w-[28%]"></th>
+                <th className="text-left p-4 border border-border text-subtle font-mono text-[0.6rem] uppercase tracking-[0.1em]">UGC Marketplaces</th>
+                <th className="text-left p-4 border border-teal/15 bg-teal/5 text-teal font-mono text-[0.6rem] uppercase tracking-[0.1em]">Faceless</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, i) => (
+                <tr key={i} className="hover:bg-bg/50 transition-colors">
+                  <td className="p-4 border border-border text-cream font-medium text-[0.82rem]">{row.label}</td>
+                  <td className="p-4 border border-border text-subtle text-[0.82rem]">{row.marketplace}</td>
+                  <td className="p-4 border border-teal/15 bg-teal/5 text-subtle text-[0.82rem]">{row.faceless}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-subtle text-[0.88rem] leading-[1.7] mt-8 max-w-[720px]">
+          Different tools for different jobs. If remote UGC is all you need, use a marketplace. If you want content, presence, and reach from one campaign — that&apos;s why we exist.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+/* ============================================
    SERVICES
    ============================================ */
 export function Services() {
@@ -184,8 +282,8 @@ export function Services() {
           <SectionTitle>Mass adoption starts with education.<br /><Em>We educate them, onboard them, and turn them into your marketers.</Em></SectionTitle>
         ) : (
           <>
-            <SectionTitle>Marketing and market research in one campaign.<br /><Em>Tested, reviewed, and marketed — by the people who actually use it.</Em></SectionTitle>
-            <p className="text-subtle leading-[1.75] max-w-[620px] text-[0.93rem]">You don&apos;t just get content. You get honest feedback, user insights, and a content library you can repurpose for your own brand pages and ads.</p>
+            <SectionTitle>Marketing, market research, and live activation in one campaign.<br /><Em>Your product gets experienced, documented, and distributed — by the people who actually use it.</Em></SectionTitle>
+            <p className="text-subtle leading-[1.75] max-w-[620px] text-[0.93rem]">You don&apos;t just get content. You get honest feedback, user insights, a content library you can repurpose across your own channels, and a community that keeps talking about your brand after the campaign ends.</p>
           </>
         )}
 
@@ -204,6 +302,19 @@ export function Services() {
               ))}
             </div>
           </div>
+
+          {isWeb2 && (
+            <div className="reveal p-8 border border-border rounded-2xl bg-bg hover:border-teal/40 hover:-translate-y-1 transition-all">
+              <span className="inline-flex px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-[0.07em] rounded-full mb-4 bg-lime/10 text-lime border border-lime/15">Live</span>
+              <h3 className="font-display text-[1.25rem] mb-2 font-normal">Live Activations &amp; Events</h3>
+              <p className="text-subtle leading-[1.7] text-[0.86rem] mb-4">Bring your product into a college, an event, or a local launch. We run the activation on the ground — students try it, react to it, create content with it — and amplify it online the same week. One campaign, three outputs: live experience, UGC content, and community reach.</p>
+              <div className="flex flex-wrap gap-1.5">
+                {['Live events', 'Product demos', 'UGC content', 'Community reach'].map(t => (
+                  <span key={t} className="font-mono text-[0.55rem] px-2 py-1 border border-border-2 rounded-full text-subtle uppercase tracking-[0.04em]">{t}</span>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="reveal p-8 border border-border rounded-2xl bg-bg hover:border-lime/40 hover:-translate-y-1 transition-all">
             <span className="inline-flex px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-[0.07em] rounded-full mb-4 bg-orange/10 text-orange border border-orange/15">Launching</span>
@@ -262,6 +373,48 @@ export function Services() {
             </div>
           </div>
         )}
+      </div>
+    </section>
+  )
+}
+
+/* ============================================
+   PROOF STRIP (Web2 only)
+   ============================================ */
+export function ProofStrip() {
+  const { isWeb2 } = useMode()
+  const ref = useScrollReveal()
+  if (!isWeb2) return null
+
+  return (
+    <section className="py-24" id="proof">
+      <div className="max-w-[1240px] mx-auto px-8">
+        <SectionTag>Campaigns in motion</SectionTag>
+        <SectionTitle>What marketplaces can&apos;t do</SectionTitle>
+        <p className="text-subtle leading-[1.75] max-w-[620px] text-[0.93rem] mb-10">
+          Three examples of what happens when your campaign lives in a real community — not a content platform.
+        </p>
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="reveal p-7 border border-border rounded-[14px] bg-bg hover:border-teal/40 hover:-translate-y-[5px] transition-all duration-300">
+            <span className="inline-flex px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-[0.07em] rounded-full mb-4 bg-lime/10 text-lime border border-lime/15">Live</span>
+            <h3 className="font-display text-[1.12rem] mb-3 font-normal">Bybit &times; GRD College</h3>
+            <p className="text-[0.82rem] text-subtle leading-[1.65] mb-3">A crypto exchange wanted to onboard first-time traders. We ran a P2P trading school inside GRD College — students learned what P2P is, what trading is, and completed their first trades on screen, together, in one classroom. Next phase: the same students creating reels about their experience, amplified by their peers.</p>
+            <p className="text-[0.78rem] text-subtle leading-[1.6]">
+              <span className="text-cream">What a marketplace delivers:</span> a creator reviewing the app from home.<br />
+              <span className="text-cream">What we&apos;re delivering:</span> a cohort of real first-time users, filmed becoming customers.
+            </p>
+          </div>
+          <div className="reveal p-7 border border-border rounded-[14px] bg-bg hover:border-teal/40 hover:-translate-y-[5px] transition-all duration-300">
+            <span className="inline-flex px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-[0.07em] rounded-full mb-4 bg-orange/10 text-orange border border-orange/15">Coming up</span>
+            <h3 className="font-display text-[1.12rem] mb-3 font-normal">Local cafe launches</h3>
+            <p className="text-[0.82rem] text-subtle leading-[1.65]">A Coimbatore cafe opens. We bring twenty students on launch day — they taste the menu, shoot reels inside the cafe, and their classmates amplify every post. The cafe gets a launch activation, a content library, and local reach from people whose followers are already nearby.</p>
+          </div>
+          <div className="reveal p-7 border border-border rounded-[14px] bg-bg hover:border-teal/40 hover:-translate-y-[5px] transition-all duration-300">
+            <span className="inline-flex px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-[0.07em] rounded-full mb-4 bg-[rgba(74,144,217,0.1)] text-[#6ab0f3] border border-[rgba(74,144,217,0.15)]">Available now</span>
+            <h3 className="font-display text-[1.12rem] mb-3 font-normal">Game playtesting with content</h3>
+            <p className="text-[0.82rem] text-subtle leading-[1.65]">A game studio runs a live playtest with thirty students in one room. They get feedback, bug reports, and launch content in the same session — UGC from real players who genuinely played the build, not creators reviewing a remote download.</p>
+          </div>
+        </div>
       </div>
     </section>
   )
@@ -349,6 +502,9 @@ export function Traction() {
 
         <p className="text-center text-subtle mt-6 text-[0.85rem]">
           Currently operating in <strong className="text-cream">Coimbatore, India</strong>. Working closely with one college and scaling from here.
+        </p>
+        <p className="text-center text-subtle mt-3 text-[0.85rem]">
+          Next 18 months: <strong className="text-cream">50 campuses, 75,000 students</strong>, India&apos;s largest campus creator network — built on verified identities, real experiences, and permanent on-chain proof.
         </p>
 
         <div className="flex justify-center gap-4 mt-8 flex-wrap">

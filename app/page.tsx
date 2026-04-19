@@ -3,17 +3,20 @@
 import { ModeProvider } from '@/components/ModeContext'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import { Marquee, Difference, HowItWorks, Services, Blockchain, Traction, About, CTA, Footer } from '@/components/Sections'
+import { Marquee, CategoryFrame, Difference, HowItWorks, PracticeComparison, Services, ProofStrip, Blockchain, Traction, About, CTA, Footer } from '@/components/Sections'
 
 export default function Home() {
   return (
     <ModeProvider>
       <Navbar />
       <Hero />
+      <CategoryFrame />
       <Marquee />
       <Difference />
       <HowItWorks />
+      <PracticeComparison />
       <Services />
+      <ProofStrip />
       <Blockchain />
       <Traction />
       <About />
