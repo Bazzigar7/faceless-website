@@ -162,16 +162,6 @@ export function ModeSwitcher() {
   return (
     <div className="inline-flex bg-surface border border-border-2 rounded-full p-1 gap-0.5">
       <button
-        onClick={() => setMode('web3')}
-        className={`px-5 py-2 rounded-full text-[0.78rem] font-semibold transition-all duration-300 tracking-[0.02em] ${
-          mode === 'web3'
-            ? 'bg-lime text-bg shadow-[0_2px_12px_rgba(200,255,0,0.15)]'
-            : 'text-subtle hover:text-cream'
-        }`}
-      >
-        Web3 Brands
-      </button>
-      <button
         onClick={() => setMode('web2')}
         className={`px-5 py-2 rounded-full text-[0.78rem] font-semibold transition-all duration-300 tracking-[0.02em] ${
           mode === 'web2'
@@ -180,6 +170,16 @@ export function ModeSwitcher() {
         }`}
       >
         Web2 Brands
+      </button>
+      <button
+        onClick={() => setMode('web3')}
+        className={`px-5 py-2 rounded-full text-[0.78rem] font-semibold transition-all duration-300 tracking-[0.02em] ${
+          mode === 'web3'
+            ? 'bg-lime text-bg shadow-[0_2px_12px_rgba(200,255,0,0.15)]'
+            : 'text-subtle hover:text-cream'
+        }`}
+      >
+        Web3 Brands
       </button>
     </div>
   )

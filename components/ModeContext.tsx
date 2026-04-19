@@ -17,7 +17,7 @@ interface ModeContextType {
 const ModeContext = createContext<ModeContextType | undefined>(undefined)
 
 export function ModeProvider({ children }: { children: ReactNode }) {
-  const [mode, setMode] = useState<Mode>('web3')
+  const [mode, setMode] = useState<Mode>('web2')
 
   const value: ModeContextType = {
     mode,
